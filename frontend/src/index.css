@@ -1,0 +1,40 @@
+/* 1. Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* 2. Initialize Tailwind v4 */
+@import "tailwindcss";
+
+/* 3. Define Your Custom Theme (Replaces tailwind.config.js) */
+@theme {
+  /* Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Dark Mode Colors */
+  --color-background: #020617; /* Slate 950 */
+  --color-surface: #0f172a;    /* Slate 900 */
+  --color-border: #1e293b;     /* Slate 800 */
+}
+
+/* 4. Global Styles & Scrollbar */
+/* In v4, we use standard CSS syntax for layers */
+@layer base {
+  body {
+    /* These classes work because we defined the variables in @theme above */
+    @apply bg-background text-slate-300 font-sans antialiased;
+  }
+
+  /* Custom Scrollbar Logic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-surface;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded hover:bg-slate-600;
+  }
+}

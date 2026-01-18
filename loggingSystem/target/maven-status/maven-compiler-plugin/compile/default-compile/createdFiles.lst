@@ -1,0 +1,7 @@
+logger\data\FileStore.class
+logger\data\Datastore.class
+logger\utils\DeepCopyUtil.class
+logger\pojo\Log.class
+logger\service\Logger.class
+logger\App.class
+logger\enums\Severity.class

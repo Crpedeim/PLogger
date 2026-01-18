@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: pgvector/pgvector:pg16  # This version has Vector search pre-installed
+    container_name: log_db
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: log_service
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

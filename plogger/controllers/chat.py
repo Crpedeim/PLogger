@@ -8,8 +8,7 @@ from config import settings
 
 router = APIRouter(prefix="/chat", tags=["AI Chat"])
 
-# Config
-# GOOGLE_API_KEY = "AIzaSyD-Oxg09hbiqzZovJFZUwYBsQE3JPZR0gI"
+
 
 class ChatRequest(BaseModel):
     
@@ -53,4 +52,5 @@ async def clear_session(session_id: str):
     if session_id in session_store:
         del session_store[session_id]
         print(f"Cleaned up session: {session_id}")
+
     return
